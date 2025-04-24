@@ -37,5 +37,6 @@ def research_compiler(llm, question: str, notes: str, answer_length: int, verbos
         verbose=verbose,
     )
 
-    result = chain({"question": question, "notes": notes, "answer_length": answer_length})
-    return result
+    return chain(
+        {"question": question, "notes": notes, "answer_length": answer_length}
+    )

@@ -24,5 +24,6 @@ def research_compiler(llm, question: str, context: str, prev_answer: str, verbos
         prompt=PROMPT,
     )
 
-    result = chain({"question": question, "context": context, "prev_answer": prev_answer})
-    return result
+    return chain(
+        {"question": question, "context": context, "prev_answer": prev_answer}
+    )

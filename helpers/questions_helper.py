@@ -7,7 +7,7 @@ getUnansweredQuestions = lambda questions: [
 ]
 getSubQuestions = lambda questions: [q for q in questions if q["type"] == "subquestion"]
 getHopQuestions = lambda questions: [q for q in questions if q["type"] == "hop"]
-getLastQuestionId = lambda questions: max([q["id"] for q in questions])
+getLastQuestionId = lambda questions: max(q["id"] for q in questions)
 
 
 def markAnswered(questions, id: int):
@@ -18,6 +18,4 @@ def markAnswered(questions, id: int):
 
 def getQuestionById(questions, id: int):
     q = [q for q in questions if q["id"] == id]
-    if len(q) == 0:
-        return None
-    return q[0]
+    return None if not q else q[0]
